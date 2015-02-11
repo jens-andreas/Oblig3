@@ -2,14 +2,14 @@
 public abstract class kort {
 
 	String navn;
-	short pin;
+	int pin;
 	boolean sperret;
 	int aksessKode;
 	
 	/**Konstruktør. Setter navn og pin til gitte verdeier.
 	 * Sier at kortet ikke er sperret.
 	 * Genererer en tilfeldig aksesskode*/
-	kort(String navn, short pin){
+	kort(String navn, int pin){
 		this.navn = navn;
 		this.pin = pin;
 		sperret = false;
@@ -33,5 +33,5 @@ public abstract class kort {
 				"\nAksesskode: " + aksessKode;
 	}
 	
-	public abstract boolean sjekkPin(short pin);
+	public abstract boolean sjekkPin(int pin);
 }
