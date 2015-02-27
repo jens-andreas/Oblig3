@@ -1,11 +1,19 @@
 import java.util.Calendar;
 
-/**Ansatt utvider kort.
+/**Ansatt utvider kort og implementerer Fast.
  * Klassen lagrer og administerer data om ansattes kort*/
-public class ansatt extends kort {
+public class ansatt extends kort implements Fast{
+
+	int timelønn;
+	int ansinitet;
+	double kredittFaktor = 100;
+	double bonusFaktor = 2000;
 	
-	ansatt(String navn, int pin){
+	ansatt(String navn, int pin, int timelønn, int ansinitet){
 		super(navn, pin);
+		this.timelønn = timelønn;
+		this.ansinitet = ansinitet;
+		settFulltNavn(navn);
 	}
 	
 	public boolean sjekkPin(int pin){
@@ -27,4 +35,34 @@ public class ansatt extends kort {
 		boolean tidOK 	= sjekkTid();
 		return !sperret && (tidOK || rettPin);
 	}
+	
+	public void settFornavn(String fornavn){
+		this.fornavn = fornavn;
+	}
+	
+	public String hentFornavn(){
+		return fornavn;
+	}
+	
+	public void settEtternavn(String etternavn){
+		this.etternavn = etternavn;
+	}
+	
+	public String hentEtternavn(){
+		return etternavn;
+	}
+	
+	
+	public String hentFulltNavn(){
+		return fornavn + " " + etternavn;
+	}
+	
+	public double beregnKreditt(){
+		return timelønn * kredittFaktor;
+	}
+	
+	public double beregnBonus(){
+		return ansinitet * bonusFaktor;
+	}
+	
 }

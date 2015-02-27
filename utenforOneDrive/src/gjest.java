@@ -7,7 +7,7 @@ public class gjest extends kort{
 	Calendar expirationDate;
 	
 	gjest(){
-		this("Gjest");
+		this("Gjest Gjest");
 	}
 	
 	gjest(String navn){
