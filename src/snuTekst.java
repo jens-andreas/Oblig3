@@ -1,4 +1,3 @@
-package snuTekst;
 import java.util.Scanner;
 
 public class snuTekst {
